@@ -20,9 +20,13 @@ public class LineComparison {
 		double q2 = sc.nextDouble();
 		double lenght2 = Math.sqrt((p2 - p1) * (p2 - p1) + (q2 - q1) * (q2 - q1));
 		Double len2 = lenght2;
-		if (len1.equals(len2)) {
-			System.out.println(" two lines are equal ");
-		} else
-			System.out.println(" two lines are not equal ");
+		int res =len1.compareTo(len2);
+		if (res == 0) {
+			System.out.println(" two line lenghts are equal ");
+		} else if (res > 0) {
+			System.out.println(" line One lenght is greater than line two lenght  ");
+		} else {
+			System.out.println(" line One lenght is lesser than line two lenght  ");
+		}
 	}
 }
