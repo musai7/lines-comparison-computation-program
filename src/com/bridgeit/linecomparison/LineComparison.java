@@ -3,30 +3,44 @@ package com.bridgeit.linecomparison;
 import java.util.Scanner;
 
 public class LineComparison {
-	public static void main(String[] args) {
+	private final double pointX1;
+	private final double pointX2;
+	private final double pointY1;
+	private final double pointY2;
+	
+	public LineComparison(double pointX1, double pointX2, double pointY1, double pointY2) {
+		super();
+		this.pointX1 = pointX1;
+		this.pointX2 = pointX2;
+		this.pointY1 = pointY1;
+		this.pointY2 = pointY2;
+	}
+	
+	public double lengthOfLine() {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("enter x1 ,y1 ,x2 ,y2 values ");
-		double x1 = sc.nextDouble();
-		double y1 = sc.nextDouble();
-		double x2 = sc.nextDouble();
-		double y2 = sc.nextDouble();
-		double lenght1 = (int) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-		Double len1 = lenght1;
-		System.out.println("enter p1 ,q1 ,p2 ,q2 values ");
-		double p1 = sc.nextDouble();
-		double q1 = sc.nextDouble();
-		double p2 = sc.nextDouble();
-		double q2 = sc.nextDouble();
-		double lenght2 = Math.sqrt((p2 - p1) * (p2 - p1) + (q2 - q1) * (q2 - q1));
-		Double len2 = lenght2;
-		int res =len1.compareTo(len2);
+		double length = Math.sqrt(Math.pow((pointX2 - pointX1),2) + Math.pow((pointY2 -pointY1),2));
+		return length;
+	}
+	
+	public static void compareTwoLines(double len1,double len2) {
+		Double lenght1=len1;
+		Double lenght2=len2;
+		 double res =lenght1.compareTo(lenght2);
 		if (res == 0) {
-			System.out.println(" two line lenghts are equal ");
+			System.out.println(" \n line one and line two lenghts are equal ");
 		} else if (res > 0) {
-			System.out.println(" line One lenght is greater than line two lenght  ");
+			System.out.println("\n line One lenght is greater than line two lenght  ");
 		} else {
-			System.out.println(" line One lenght is lesser than line two lenght  ");
+			System.out.println("\n line One lenght is lesser than line two lenght  ");
 		}
+	}
+	
+	public static void main(String[] args) {
+		LineComparison lineComparison =new LineComparison(10, 20, 30, 40);
+		double len1 = lineComparison.lengthOfLine();
+		LineComparison lineComparison2 =new LineComparison(50, 70, 90, 60);
+		double len2 = lineComparison2.lengthOfLine();
+		compareTwoLines(len1,len2);
+		
 	}
 }
