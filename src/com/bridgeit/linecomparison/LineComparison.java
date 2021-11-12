@@ -27,7 +27,7 @@ public class LineComparison {
 		Double lenght2=len2;
 		 double res =lenght1.compareTo(lenght2);
 		if (res == 0) {
-			System.out.println(" \n line one and line two lenghts are equal ");
+			System.out.println(" \n  line one and line two lenghts are equal  ");
 		} else if (res > 0) {
 			System.out.println("\n line One lenght is greater than line two lenght  ");
 		} else {
